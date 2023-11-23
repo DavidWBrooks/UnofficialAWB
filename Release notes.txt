@@ -1,0 +1,3 @@
+This is an unofficial build of the AutoWikiBrowser package from a recent source tree on SourceForge.
+
+Latest release: AWB 6.2.1.1 from SVN revision 12554 (November 1 2023) built on November 19 2023 using Visual Studio 2019.

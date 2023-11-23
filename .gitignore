@@ -1,0 +1,2 @@
+# Don't pollute upload with easily regenerated binary (this only exists in my local repo)
+build/
