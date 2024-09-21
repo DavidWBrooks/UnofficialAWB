@@ -1,2 +1,6 @@
+# The files mentioned here are only on my local machine
 # Don't pollute upload with easily regenerated binary (this only exists in my local repo)
 build/
+# Local only
+How to release.txt
+UnofficialAWB link.txt
