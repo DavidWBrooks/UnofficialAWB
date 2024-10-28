@@ -1,7 +1,6 @@
 This is an unofficial build of the AutoWikiBrowser release package from a recent source tree on SourceForge.
 
-Release detail: a little after AWB 6.3.1.1, from SVN revision 12635 (August 9 2024), built on September 21 2024 using Visual Studio 2022. This now targets .NET Framework 4.8, which should be installed on most systems by now.
+Release detail: a little after AWB 6.3.1.1, from SVN revision 12643 (October 28 2024), built on October 8 2024 using Visual Studio 2022. This targets .NET Framework 4.8, which should be installed on most systems by now.
 
-Downloads:
-AutoWikiBrowser6311.zip, equivalent to official release, should work on all Windows platforms.
-AutoWikiBrowser6311-ARM.zip, built specifically for ARM64 platforms, but without plugins.
+Download:
+AutoWikiBrowser6312.zip, equivalent to official release, should work on all Windows platforms. It will run under emulation on an ARM64 platform.
