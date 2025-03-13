@@ -34,7 +34,6 @@
 // Size, SizeF, Point: use original x, y
 // Margin: use original Padding values (1 or 4 integer). If none specified, remove the resx entry
 //
-// TO BE DETERMINED - check the autosize stuff, or did that stay in the cs file?
 // TO DO - resourceize specification of working directories and logfile
 // TO DO - more error handling?
 // TO DO - decide whether to use the working dir or the original dirs as template (ask the user)
@@ -82,17 +81,32 @@ namespace FixResx
                 basename = args[0];
             }
 
-            string designerBase = Path.Combine(preLocDir, basename + ".Designer.cs");
-            string designerTemplate = Path.Combine(postLocDir, basename + ".Designer.cs");
-            string resxTemplate = Path.Combine(postLocDir, basename + ".resx");
-            string newDesigner = Path.Combine(workingDir, basename + ".Designer.cs");
-            string newResx = Path.Combine(workingDir, basename + ".resx");
-            string tempResx = newResx + ".new";
+            basename = basename.Replace('/', '\\'); // In case copied from a SVN list
 
+            string newDesigner = Path.Combine(workingDir, basename + ".Designer.cs");
             if (!File.Exists(newDesigner)) {
                 Console.WriteLine($"\"{basename}\" is invalid.");
                 return;
             }
+
+            // When creating new files, make sure the capitalization is correct. How ugly would you like it?
+            FileInfo desInfo = new FileInfo(newDesigner);
+            DirectoryInfo dirInfo = desInfo.Directory;
+            FileInfo actualFI = dirInfo.GetFiles(desInfo.Name)[0];
+            string actualName = actualFI.Name;
+            if (actualName != desInfo.Name) {
+                string root = actualName.Substring(0, actualName.Length - ".Designer.cs".Length);
+                basename = basename.Substring(0, basename.Length - root.Length) + root;
+                newDesigner = actualFI.FullName;
+                Console.WriteLine($"Correcting capitalization: {basename}");
+            }
+
+            string newResx = Path.Combine(workingDir, basename + ".resx");
+            string designerBase = Path.Combine(preLocDir, basename + ".Designer.cs");
+            string designerTemplate = Path.Combine(postLocDir, basename + ".Designer.cs");
+            string resxTemplate = Path.Combine(postLocDir, basename + ".resx");
+            string tempResx = newResx + ".new";
+
 
             Dictionary<string, string> cslist = new Dictionary<string, string>();
             Dictionary<string, string> resxlist = new Dictionary<string, string>();
