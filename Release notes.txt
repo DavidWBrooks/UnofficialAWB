@@ -1,6 +1,6 @@
-This is an unofficial build of the AutoWikiBrowser release package from a recent source tree on SourceForge.
+This is an test build of the AutoWikiBrowser release package from a recent source tree on SourceForge.
 
-It represents SVN revision 12948 (February 23 2025), built using Visual Studio 2022. This targets .NET Framework 4.8.1.
+It represents SVN revision 12974, with semi-automated fixes to the geometries of dialogs that seemed to be broken by the Visual Studio localization step.
 
 Download:
 AutoWikiBrowser6401.zip, equivalent to the official release.
