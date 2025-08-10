@@ -1,6 +1,8 @@
 This is an test build of the AutoWikiBrowser release package from a recent source tree on SourceForge.
 
-It represents SVN revision 12992, with semi-automated fixes to the geometries of dialogs that seemed to be broken by the Visual Studio localization step.
+It represents SVN revision 13002, with updates to handle the email-based re-authentication.
 
 Download:
 AutoWikiBrowser6401.zip, equivalent to the official release.
+AutoWikiBrowser6401-64bit.zip, preferred for an ARM64 device (x64 will also work).
+
