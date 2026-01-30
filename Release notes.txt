@@ -1,8 +1,6 @@
-This is an test build of the AutoWikiBrowser release package from a recent source tree on SourceForge.
-
-It represents SVN revision 13002, with updates to handle the email-based re-authentication.
+These are builds of the AutoWikiBrowser release package from a recent source tree on SourceForge. They represent SVN revision 13011, created on 29 Jan 2026.
 
 Download:
 AutoWikiBrowser6401.zip, equivalent to the official release.
-AutoWikiBrowser6401-64bit.zip, preferred for an ARM64 device (x64 will also work).
+AutoWikiBrowser6401-arm64.zip, preferred for an ARM64 device.
 
