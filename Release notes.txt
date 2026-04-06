@@ -1,6 +1,18 @@
-These are builds of the AutoWikiBrowser release package from a recent source tree on SourceForge. They represent SVN revision 13015, created on 29 Mar 2026.
+These are builds of the AutoWikiBrowser release package from a recent source tree on SourceForge. They represent SVN revision 13017, and were created on 6 April 2026.
 
 Download:
 AutoWikiBrowser6401.zip, equivalent to the official release.
 AutoWikiBrowser6401-arm64.zip, preferred for an ARM64 device.
 
+Significant update: The various overloads of Tools.GetHTML, in the WikiFunctions library, are intended primarily for use by plugins and modules. They return the body of a URL response, typically of a MediaWiki API query. Because they do not provide authentication, they are now limited to 500 requests per hour. To raise this limit, add a parameter as follows:
+
+Tools.GetHTML(string url) becomes
+Tools.GetHTML(string URL, IAutoWikiBrowser awb)
+
+Tools.GetHTML(string url, Encoding enc, out string responseURL) becomes
+Tools.GetHTML(string url, Encoding enc, out string responseURL, IAutoWikiBrowser awb)
+
+The parameter awb is:
+Plugin - Either the "sender" parameter to Initialise(), or the "sender" (first) parameter to ProcessArticle().
+Module - the field awb in the CustomModule class.
+If awb is provided in this way, the MediaWiki query will execute with the current user's credentials.
