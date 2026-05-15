@@ -4,5 +4,5 @@ Private builds of recent AutoWikiBrowser sources. I will update this on occasion
 # Installation
 1. Navigate to [releases/latest](https://github.com/DavidWBrooks/UnofficialAWB/releases/latest), or you can use the "latest" button to the right.
 1. Download the appropriate AutoWikiBrowser*.zip file from there. The release note identifies the AutoWikiBrowser version.
-Files with the suffix "-arm64" are intended for optimal performance on an ARM64 device, but (despite) the name will run on an x64 device and can be used if a large address space is needed.
+Files with the suffix "-arm64" are intended for optimal performance on an ARM64 device, but (despite the name) will run on an x64 device and can be used if a large address space is needed.
 1. Follow the instructions on the [AutoWikiBrowser project page](https://en.wikipedia.org/wiki/Wikipedia:AutoWikiBrowser), starting at the appropriate "Running on..." section.
