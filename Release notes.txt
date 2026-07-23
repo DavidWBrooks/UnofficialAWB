@@ -1,4 +1,4 @@
-These are builds of the official AutoWikiBrowser 6.5.0.0 release.
+These are builds of an interim AutoWikiBrowser release, currently identified as 6.5.0.1. They are based on SVN revision 13039.
 
 Download:
 AutoWikiBrowser6500.zip, equivalent to the official release.
