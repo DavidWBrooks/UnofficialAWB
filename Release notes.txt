@@ -1,18 +1,8 @@
-These are builds of an interim AutoWikiBrowser release, currently identified as 6.5.0.1. They are based on SVN revision 13039.
+These are builds of an interim AutoWikiBrowser release, currently identified as 6.5.0.1. They are based on SVN revision 13045.
 
 Download:
 AutoWikiBrowser6500.zip, equivalent to the official release.
 AutoWikiBrowser6500-arm64.zip, preferred for an ARM64 device, but also (despite the name) intended for an x64 device when a large address space is needed.
 
-Significant update: The various overloads of Tools.GetHTML, in the WikiFunctions library, are intended primarily for use by plugins and modules. They return the body of a URL response, typically of a MediaWiki API query. Because they do not provide authentication, they are now limited to 10 requests per minute. To raise this limit, add a parameter as follows:
+Significant update: The Database scanner offers the user the ability to scan every XML file in the same directory, because Mediawiki dumps are now split into smaller files.
 
-   Tools.GetHTML(string url) becomes
-   Tools.GetHTML(string URL, IAutoWikiBrowser awb)
-
-   Tools.GetHTML(string url, Encoding enc, out string responseURL) becomes
-   Tools.GetHTML(string url, Encoding enc, out string responseURL, IAutoWikiBrowser awb)
-
-The parameter awb is:
-Plugin - Either the "sender" parameter to Initialise(), or the "sender" (first) parameter to ProcessArticle().
-Module - the field awb in the CustomModule class.
-If awb is provided in this way, the MediaWiki query will execute with the current user's credentials.
